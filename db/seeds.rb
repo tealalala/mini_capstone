@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# 3.times do
+  product = Product.new(name: "Leuchtturm1917 Hardcover Notebook - Medium (A5)", price: 20, image_url: "some_image.jpeg", description: "yellow covered notebook, dotted")
+# end
