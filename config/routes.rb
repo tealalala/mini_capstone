@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
 
   namespace :api do
-    get '/one_product' => 'products#one_product'
-    get '/all_products' => 'products#all_products'
+    get '/products' => 'products#index'
+    get '/products/:id' => 'products#show'
   end
 
 end

@@ -1,6 +1,7 @@
 json.array! @products do |product|
+  json.id product.id
   json.name product.name
   json.price product.price
-  json.price product.image_url
+  json.image_url product.image_url
   json.description product.description
 end
