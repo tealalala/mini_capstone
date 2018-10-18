@@ -8,7 +8,8 @@ class Product < ApplicationRecord
   end
 
   def tax
-    return "Tax is $9%"
+    tax_rate = 0.09
+    price * tax_rate
   end
 
   def total
