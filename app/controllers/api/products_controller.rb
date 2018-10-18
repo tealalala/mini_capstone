@@ -5,8 +5,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    product_id = params[:id]
-    @product = Product.first
+    @product = Product.find_by(id: params[:id])
     render 'show.json.jbuilder'
   end
 
@@ -17,8 +16,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    product_id = params[:id]
-    @product = Product.find_by(id: product_id)
+    @product = Product.find_by(id: params[:id])
     @product.name = params[:input_name]
     @product.price = params[:input_price]
     @product.image_url = params[:input_image_url]
