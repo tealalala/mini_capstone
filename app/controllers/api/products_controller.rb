@@ -11,8 +11,13 @@ class Api::ProductsController < ApplicationController
 
   def create
     @product = Product.new(name: params[:input_name], price: params[:input_price], image_url: params[:input_image_url], description: params[:input_description])
-    @product.save
-    render 'show.json.jbuilder'
+    if @product.save
+      p "data is validated"
+      render 'show.json.jbuilder'
+    else
+      p "data is invalid"
+      render 'error.json.jbuilder'
+    end
   end
 
   def update
@@ -21,7 +26,12 @@ class Api::ProductsController < ApplicationController
     @product.price = params[:input_price]
     @product.image_url = params[:input_image_url]
     @product.description = params[:input_description]
-    @product.save
-    render 'show.json.jbuilder'
+    if @product.save
+      p "data is validated"
+      render 'show.json.jbuilder'
+    else
+      p "data is invalid"
+      render 'error.json.jbuilder'
+    end
   end
 end

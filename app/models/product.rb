@@ -1,4 +1,17 @@
 class Product < ApplicationRecord
+  # presence - name, price
+  validates :name, :price, :presence => true
+
+  # uniqueness - name
+  validates :name, :uniqueness => true
+
+  # numericality - price
+  # less than whatever you picked for your decimal - price
+  validates :price, :numericality => true
+
+  # length at least 10 characters - description
+  validates :description, length: { minimum: 10 }
+
   def is_discounted?
     if price < 10
       return true
