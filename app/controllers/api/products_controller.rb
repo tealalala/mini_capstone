@@ -3,9 +3,9 @@ class Api::ProductsController < ApplicationController
     search_item = params[:input_name]
     @products = Product.where('name LIKE ?', "%#{search_item}%").
     if params[:sort] == ‘price
-      @products = @products.order(:price => :asc)
-    else
       @products = @products.order(:id => :asc)
+    else
+      @products = @products.order(:price => :asc)
     end
     render 'index.json.jbuilder'
   end
