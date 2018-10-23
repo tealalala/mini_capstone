@@ -12,10 +12,10 @@ class Product < ApplicationRecord
   # # length at least 10 characters - description
   # validates :description, length: { minimum: 10 }
 
-  def supplier
-    # Supplier.find_by(id: supplier_id)
-    supplier.first
-  end
+  belongs_to :supplier
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
 
   def is_discounted?
     if price < 10
