@@ -7,9 +7,9 @@
 #   {name: "a", price: "2.0", image_url: "s", description: "d", stock_status: nil}
 # ])
 
-products = Product.all
-
-products.each do |product|
-  product.supplier_id = rand(1..3)
-  product.save
-end
+# products = Product.all
+#
+# products.each do |product|
+#   product.supplier_id = rand(1..3)
+#   product.save
+# end

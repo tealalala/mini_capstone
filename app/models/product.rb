@@ -13,7 +13,8 @@ class Product < ApplicationRecord
   # validates :description, length: { minimum: 10 }
 
   def supplier
-    Supplier.find_by(id: supplier_id)
+    # Supplier.find_by(id: supplier_id)
+    supplier.first
   end
 
   def is_discounted?
