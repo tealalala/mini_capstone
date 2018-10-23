@@ -7,3 +7,4 @@ json.is_discounted product.is_discounted?
 json.tax product.tax
 json.total product.total
 json.stock_status product.stock_status
+# json.supplier_name product.supplier.name

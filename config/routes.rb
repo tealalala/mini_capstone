@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
 
   namespace :api do
+    # products CRUD
     # index
     get '/products' => 'products#index'
 
@@ -14,6 +15,18 @@ Rails.application.routes.draw do
 
     # update
     patch '/products/:id' => 'products#update'
-  end
 
+    # # suppliers CRUD
+    # # index
+    # get '/suppliers' => 'suppliers#index'
+    #
+    # #show
+    # get '/suppliers/:id' => 'suppliers#show'
+    #
+    # # create
+    # post '/suppliers' => 'suppliers#create'
+    #
+    # # update
+    # patch '/suppliers/:id' => 'suppliers#update'
+  end
 end
