@@ -13,6 +13,7 @@ class Product < ApplicationRecord
   # validates :description, length: { minimum: 10 }
 
   belongs_to :supplier
+  has_many :images
   # def supplier
   #   Supplier.find_by(id: supplier_id)
   # end

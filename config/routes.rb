@@ -28,5 +28,15 @@ Rails.application.routes.draw do
     #
     # # update
     # patch '/suppliers/:id' => 'suppliers#update'
+
+    # images
+    # index
+    get '/images' => 'images#index'
+    # show
+    get '/images/:id' => 'images#show'
+
+    # users
+    # create
+    post "/users" => "users#create"
   end
 end
