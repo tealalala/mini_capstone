@@ -36,7 +36,13 @@ Rails.application.routes.draw do
     get '/images/:id' => 'images#show'
 
     # users
+    # show
+    get "/users/:id" => "users#show"
     # create
     post "/users" => "users#create"
+
+    # sessions
+    # create
+    post "/sessions" => "sessions#create"
   end
 end
