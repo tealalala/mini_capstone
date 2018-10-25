@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
-
+  before_action :authenticate_user
+  
   def show
     @user = User.find_by(id: params[:id])
     render 'show.json.jbuilder'

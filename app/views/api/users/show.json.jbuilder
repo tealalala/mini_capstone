@@ -1,2 +1,1 @@
-json.message "test"
-json.id @user.id
+json.user_info @user
