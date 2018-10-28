@@ -32,9 +32,9 @@ Rails.application.routes.draw do
 
 
     ## orders
-    post '/orders' => 'orders#index'
+    get '/orders' => 'orders#index'
     post '/orders' => 'orders#create'
-    post '/orders/:id' => 'orders#show'
+    get '/orders/:id' => 'orders#show'
 
 
     ## images
