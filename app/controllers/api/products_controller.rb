@@ -1,4 +1,6 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     search_item = params[:input_name]
     @products = Product.where("name LIKE ?", "%#{search_item}%")

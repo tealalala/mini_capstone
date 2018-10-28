@@ -26,12 +26,12 @@ class Api::OrdersController < ApplicationController
       tax: calculated_tax,
       total: calculated_total
     )
-    if current_user
-      @order = current_user.order
-      render 'show.json.jbuilder'
-    else
-        render json: [], status: :unauthorized
-    end
+    # if current_user
+    #   @order = current_user.order
+    #   render 'show.json.jbuilder'
+    # else
+    #     render json: [], status: :unauthorized
+    # end
 
     if @order.save
       p "order is a success"
