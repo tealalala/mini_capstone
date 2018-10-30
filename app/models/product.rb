@@ -12,6 +12,7 @@ class Product < ApplicationRecord
   # # length at least 10 characters - description
   # validates :description, length: { minimum: 10 }
 
+  has_many :category_products
   has_many :orders
 
   belongs_to :supplier
