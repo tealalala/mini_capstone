@@ -8,3 +8,4 @@ json.total product.total
 json.stock_status product.stock_status
 json.supplier_name product.supplier.name
 json.image_url product.images
+# json.category product.id.category
