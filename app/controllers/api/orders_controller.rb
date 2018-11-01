@@ -9,9 +9,12 @@ class Api::OrdersController < ApplicationController
   end
 
   def create
-    # find_order = Order.find_by(id: params[:product_id])
-    # @find_product = find_order.product
-    # @find_subtotal = find_order.product.price
+    # carted_products = CartedProduct.where(status: "carted", user_id: current_user.id)
+    #
+    # carted_products.each do |carted_product|
+    #   p carted_product
+    # end
+
     product = Product.find_by(id: params[:product_id])
     price = product.price
     calculated_subtotal = params[:quantity].to_i * price
@@ -19,19 +22,11 @@ class Api::OrdersController < ApplicationController
     calculated_total = calculated_subtotal + calculated_tax
 
     @order = Order.new(
-      user_id: params[:user_id],
-      product_id: params[:product_id],
-      quantity: params[:quantity],
+      user_id: current_user.id,
       subtotal: calculated_subtotal,
       tax: calculated_tax,
       total: calculated_total
     )
-    # if current_user
-    #   @order = current_user.order
-    #   render 'show.json.jbuilder'
-    # else
-    #     render json: [], status: :unauthorized
-    # end
 
     if @order.save
       p "order is a success"
