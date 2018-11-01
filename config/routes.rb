@@ -3,17 +3,14 @@ Rails.application.routes.draw do
   # verb '/urls' => 'namespace/controllers#action'
 
   namespace :api do
-    # products CRUD
-    # index
+    #carted_products
+    get '/carted_products' => 'carted_products#index'
+    post '/carted_products' => 'carted_products#create'
+
+    # products
     get '/products' => 'products#index'
-
-    #show
     get '/products/:id' => 'products#show'
-
-    # create
     post '/products' => 'products#create'
-
-    # update
     patch '/products/:id' => 'products#update'
 
     # # suppliers CRUD
@@ -40,7 +37,6 @@ Rails.application.routes.draw do
     ## images
     get '/images' => 'images#index'
     get '/images/:id' => 'images#show'
-
 
 
     # users
