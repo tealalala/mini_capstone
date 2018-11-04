@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(name: params[:input_name], price: params[:input_price], description: params[:input_description])
+    @product = Product.new(id: 7, name: params[:input_name], price: params[:input_price], description: params[:input_description])
     @product.save
     if @product.save
       p "data is validated"
