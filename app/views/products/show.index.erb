@@ -6,3 +6,5 @@
 <p>price $<%= @product.price %></p>
 <p>description: <%= @product.description %></p>
 <p>stock status: <%= @product.stock_status %></p>
+
+<p><a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow">Delete this product</a></p>

@@ -1,6 +1,7 @@
-<h1>Add a new product</h1>
+<h1>Edit a product</h1>
 
-<form action="/products" method="post">
+<form action="/products/<%= @product.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <p>name: <input type="text" name="name"></p>
   <p>price: <input type="text" name="price"></p>
   <p>description: <input type="text" name="description"></p>
@@ -11,5 +12,5 @@
       <% end %>
     </select>
   </p>
-  <p><input type="submit"></p>
+  <input type="submit" value="Submit Product Update">
 </form>

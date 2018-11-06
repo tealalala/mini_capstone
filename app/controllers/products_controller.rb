@@ -10,11 +10,13 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product
+    @suppliers = Supplier.all
     render 'new.html.erb'
   end
 
   def create
-    @product = Product.new(id: 7, name: params[:input_name], price: params[:input_price], description: params[:input_description])
+    @product = Product.new(name: params[:name], price: params[:price], description: params[:description])
     @product.save
     if @product.save
       p "data is validated"
@@ -24,4 +26,31 @@ class ProductsController < ApplicationController
       render 'error.json.jbuilder'
     end
   end
+
+  def edit
+    @suppliers = Supplier.all
+    @product = Product.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.name = params[:name]
+    @product.price = params[:price]
+    @product.description = params[:description]
+    if @product.save
+      p "data is validated"
+      redirect_to '/products'
+    else
+      p "data is invalid"
+      render 'error.json.jbuilder'
+    end
+  end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+    redirect_to '/products'
+  end
+
 end
