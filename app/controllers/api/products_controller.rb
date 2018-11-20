@@ -3,7 +3,7 @@ class Api::ProductsController < ApplicationController
 
   def index
     search_item = params[:input_name]
-    @products = Product.where("name LIKE ?", "%#{search_item}%")
+    @products = Product.where("name LIKE ?", "%#{search_item}%").order("id ASC")
     if params[:sort] == 'price'
       @products = @products.order(:id => :asc)
     else
